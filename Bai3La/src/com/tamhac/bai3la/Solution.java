@@ -23,6 +23,7 @@ public class Solution {
 			}
 		}
 		for(Player p : player) {
+			p.calculate();
 			p.showCard();
 		}
 		
