@@ -5,8 +5,9 @@ import java.util.Random;
 
 public class Game {
 	private byte playerNum;
-	ArrayList<String> cardPack = new ArrayList<String>(52);
-	int totalCardLeft=52;
+	private ArrayList<String> cardPack = new ArrayList<String>(52);
+	private int totalCardLeft=52;
+	
 	public void start() {
 		System.out.println("Bat dau game bai 3 la");
 		System.out.print("Moi nhap vao so nguoi choi:");
@@ -26,6 +27,16 @@ public class Game {
 		cardPack.remove(card);
 		totalCardLeft--;
 		return card;
+	}
+	public String findWinner(int bankerFinalValue,int normalPlayerFinalValue) {
+		if(normalPlayerFinalValue>bankerFinalValue)
+		{
+			return "Player";
+		}
+		else if(normalPlayerFinalValue==bankerFinalValue) {
+			return "Draw";
+		}
+		else return "Banker";
 	}
 	/*public void setPlayerNum(byte playerNum) {
 		this.playerNum=playerNum;
